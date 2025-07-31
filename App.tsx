@@ -1,12 +1,16 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
 import Button from './src/components/Button';
+import { BatLogo } from './src/components/BatLogo';
 
 export default function App() {
   return (
     <View style={styles.container}>
       <StatusBar style="light" />
-      <Button text="ACTIVATED BAT SINAL" onPress={() => {}} />
+      <View>
+        <BatLogo/>
+      </View>
+      <Button text="ACTIVATED BAT SINAL" onPress={() => {console.log("oi")}} />
     </View>
   );
 }
@@ -14,7 +18,7 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#0000',
+    backgroundColor: '#101010',
     alignItems: 'center',
     justifyContent: 'center',
     padding: 24
