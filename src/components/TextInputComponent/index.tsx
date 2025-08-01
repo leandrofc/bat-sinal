@@ -33,7 +33,7 @@ export function TextInputComponent({
           value={value}
           onChangeText={onChange}
           placeholderTextColor="#676767"
-          multiline={true}
+          multiline={isTextArea}
           onFocus={() => setIsFocused(true)}
           onBlur={() => setIsFocused(false)}
         />
