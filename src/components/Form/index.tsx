@@ -4,8 +4,24 @@ import { TextInputComponent } from "../TextInputComponent"
 import Button from "../Button"
 import { styles } from "./index.styles"
 import { FormProps } from "./index.types"
+import { useState } from "react"
 
 const Form = ({ sendFunction }: FormProps) => {
+    const [name, setName] = useState("");
+    const [phone, setPhone] = useState("");
+    const [location, setLocation] = useState("");
+    const [observation, setObservation] = useState("");
+
+    const handleSend = () => {
+        console.log({
+            name,
+            phone,
+            location,
+            observation
+        });
+        sendFunction();
+    };
+
     return (
         <View style={styles.container}>
             <View>
@@ -14,32 +30,32 @@ const Form = ({ sendFunction }: FormProps) => {
             <View style={styles.inputsContainer}>
                 <TextInputComponent 
                     label="Name"
-                    onChange={() => {}}
+                    onChangeText={setName}
                     placeholder="Type Your name"
-                    value=""
+                    value={name}
                 />
                 <TextInputComponent 
                     label="Phone"
-                    onChange={() => {}}
+                    onChangeText={setPhone}
                     placeholder="Type Your phone"
-                    value=""
+                    value={phone}
                 />
                 <TextInputComponent 
                     label="Location"
-                    onChange={() => {}}
+                    onChangeText={setLocation}
                     placeholder="Type Your location"
-                    value=""
+                    value={location}
                 />
                 <TextInputComponent 
                     label="Observation"
-                    onChange={() => {}}
+                    onChangeText={setObservation}
                     placeholder="Type Your observation"
-                    value=""
+                    value={observation}
                     isTextArea
                 />
                 <Button
                     text="Send"
-                    onPress={sendFunction}
+                    onPress={handleSend}
                 />
             </View>
         </View>
