@@ -14,6 +14,7 @@ export function TextInputComponent({
   ref,
   isTextArea = false,
   blurOnSubmit,
+  keyboardType,
 } : TextInputComponentProps) {
   const [isFocused, setIsFocused] = useState(false);
 
@@ -44,6 +45,7 @@ export function TextInputComponent({
           returnKeyType={returnKeyType}
           ref={ref}
           blurOnSubmit={blurOnSubmit}
+          keyboardType={keyboardType}
         />
       </View>
     </View>
