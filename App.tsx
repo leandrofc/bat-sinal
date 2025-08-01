@@ -3,27 +3,15 @@ import { StyleSheet, Text, View } from 'react-native';
 import Button from './src/components/Button';
 import { BatLogo } from './src/components/BatLogo';
 import { TextInputComponent } from './src/components/TextInputComponent';
+import Form from './src/components/Form';
+import CallBatSinal from './src/components/CallBatSinal';
+import Home from './src/screens/Home';
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <StatusBar style="light" />
-      <View>
-        <BatLogo/>
-      </View>
-      <View>
-        <BatLogo isSmall/>
-      </View>
-      <View>
-        <TextInputComponent
-          label='Name'
-          value=""
-          onChange={() => {}}
-          placeholder='Type your name'
-          isTextArea
-        />
-      </View>
-      <Button text="ACTIVATED BAT SINAL" onPress={() => {console.log("oi")}} />
+        <Home />
+        <StatusBar style="light" />
     </View>
   );
 }
