@@ -3,8 +3,9 @@ import { BatLogo } from "../BatLogo"
 import { TextInputComponent } from "../TextInputComponent"
 import Button from "../Button"
 import { styles } from "./index.styles"
+import { FormProps } from "./index.types"
 
-const Form = () => {
+const Form = ({ sendFunction }: FormProps) => {
     return (
         <View style={styles.container}>
             <View>
@@ -38,7 +39,7 @@ const Form = () => {
                 />
                 <Button
                     text="Send"
-                    onPress={() => {console.log("oi")}}
+                    onPress={sendFunction}
                 />
             </View>
         </View>
