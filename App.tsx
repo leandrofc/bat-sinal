@@ -12,6 +12,9 @@ export default function App() {
         <BatLogo/>
       </View>
       <View>
+        <BatLogo isSmall/>
+      </View>
+      <View>
         <TextInputComponent
           label='Name'
           value=""
