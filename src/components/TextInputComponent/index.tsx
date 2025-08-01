@@ -9,7 +9,11 @@ export function TextInputComponent({
   onChangeText,
   placeholder,
   value,
+  onSubmitEditing,
+  returnKeyType,
+  ref,
   isTextArea = false,
+  blurOnSubmit,
 } : TextInputComponentProps) {
   const [isFocused, setIsFocused] = useState(false);
 
@@ -36,6 +40,10 @@ export function TextInputComponent({
           multiline={isTextArea}
           onFocus={() => setIsFocused(true)}
           onBlur={() => setIsFocused(false)}
+          onSubmitEditing={onSubmitEditing}
+          returnKeyType={returnKeyType}
+          ref={ref}
+          blurOnSubmit={blurOnSubmit}
         />
       </View>
     </View>
