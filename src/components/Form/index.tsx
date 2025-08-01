@@ -42,6 +42,7 @@ const Form = ({ sendFunction }: FormProps) => {
                         onSubmitEditing={() => phoneRef.current?.focus()}
                     />
                     <TextInputComponent 
+                        keyboardType="phone-pad"
                         label="Phone"
                         onChangeText={setPhone}
                         placeholder="Type Your phone"
