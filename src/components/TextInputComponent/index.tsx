@@ -6,7 +6,7 @@ import { TextInputComponentProps } from './index.types';
   
 export function TextInputComponent({
   label,
-  onChange,
+  onChangeText,
   placeholder,
   value,
   isTextArea = false,
@@ -31,7 +31,7 @@ export function TextInputComponent({
           ]}
           placeholder={placeholder}
           value={value}
-          onChangeText={onChange}
+          onChangeText={onChangeText}
           placeholderTextColor="#676767"
           multiline={isTextArea}
           onFocus={() => setIsFocused(true)}
