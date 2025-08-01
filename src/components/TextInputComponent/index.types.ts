@@ -2,6 +2,6 @@ export interface TextInputComponentProps {
     label: string,
     placeholder: string,
     value: string,
-    onChange: () => {},
+    onChange: () => void,
     isTextArea?: boolean,
 }
