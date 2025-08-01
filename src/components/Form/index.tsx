@@ -1,10 +1,10 @@
-import { View } from "react-native"
+import { TextInput, View } from "react-native"
 import { BatLogo } from "../BatLogo"
 import { TextInputComponent } from "../TextInputComponent"
 import Button from "../Button"
 import { styles } from "./index.styles"
 import { FormProps } from "./index.types"
-import { useState } from "react"
+import { useRef, useState } from "react"
 
 const Form = ({ sendFunction }: FormProps) => {
     const [name, setName] = useState("");
@@ -12,7 +12,7 @@ const Form = ({ sendFunction }: FormProps) => {
     const [location, setLocation] = useState("");
     const [observation, setObservation] = useState("");
 
-    const handleSend = () => {
+    const handleSubmit = () => {
         console.log({
             name,
             phone,
@@ -21,6 +21,10 @@ const Form = ({ sendFunction }: FormProps) => {
         });
         sendFunction();
     };
+
+    const phoneRef = useRef<TextInput>(null);
+    const locationRef = useRef<TextInput>(null);
+    const observationRef = useRef<TextInput>(null);
 
     return (
         <View style={styles.container}>
@@ -33,18 +37,26 @@ const Form = ({ sendFunction }: FormProps) => {
                     onChangeText={setName}
                     placeholder="Type Your name"
                     value={name}
+                    returnKeyType="next"
+                    onSubmitEditing={() => phoneRef.current?.focus()}
                 />
                 <TextInputComponent 
                     label="Phone"
                     onChangeText={setPhone}
                     placeholder="Type Your phone"
                     value={phone}
+                    ref={phoneRef}
+                    returnKeyType="next"
+                    onSubmitEditing={() => locationRef.current?.focus()}
                 />
                 <TextInputComponent 
                     label="Location"
                     onChangeText={setLocation}
                     placeholder="Type Your location"
                     value={location}
+                    ref={locationRef}
+                    returnKeyType="next"
+                    onSubmitEditing={() => observationRef.current?.focus()}
                 />
                 <TextInputComponent 
                     label="Observation"
@@ -52,10 +64,14 @@ const Form = ({ sendFunction }: FormProps) => {
                     placeholder="Type Your observation"
                     value={observation}
                     isTextArea
+                    ref={observationRef}
+                    returnKeyType="done"
+                    onSubmitEditing={handleSubmit}
+                    blurOnSubmit={true}
                 />
                 <Button
                     text="Send"
-                    onPress={handleSend}
+                    onPress={handleSubmit}
                 />
             </View>
         </View>
