@@ -8,6 +8,9 @@ export const styles = StyleSheet.create({
     color: "white",
     fontSize: 20
   },
+  labelForInputFocus: {
+    color: "#FADD21",
+  },
   inputContainer: {
     flexDirection: "row",
   },
@@ -15,9 +18,15 @@ export const styles = StyleSheet.create({
     width:'100%',
     borderWidth:1,
     borderRadius:24,
-    borderColor: "#FADD21",
+    borderColor: "#fffff",
     padding:24,
     color: "white",
     fontSize: 16,
+  },
+  inputFocus: {
+    borderColor: "#FADD21",
+  },
+  inputTextArea: {
+    height: 134
   }
 });
