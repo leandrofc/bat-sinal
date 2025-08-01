@@ -2,15 +2,16 @@ import { View } from "react-native"
 import { BatLogo } from "../BatLogo"
 import Button from "../Button"
 import { styles } from "./index.styles"
+import { CallBatSinalProps } from "./index.types"
 
-const CallBatSinal = () => {
+const CallBatSinal = ({ callFunction }: CallBatSinalProps) => {
     return (
         <View style={styles.container}>
             <View>
                 <BatLogo/>
             </View>
             <View style={styles.buttonContainer}>
-                <Button text="ACTIVATED BAT SINAL" onPress={() => {console.log("oi")}} />
+                <Button text="ACTIVATED BAT SINAL" onPress={callFunction} />
             </View>
         </View>
     )
