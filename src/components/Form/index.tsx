@@ -1,4 +1,4 @@
-import { TextInput, TouchableWithoutFeedback, View, Keyboard, KeyboardAvoidingView, Platform, ScrollView } from "react-native"
+import { TextInput, TouchableWithoutFeedback, View, Keyboard, KeyboardAvoidingView, Platform, ScrollView, Alert } from "react-native"
 import { BatLogo } from "../BatLogo"
 import { TextInputComponent } from "../TextInputComponent"
 import Button from "../Button"
@@ -19,7 +19,15 @@ const Form = ({ sendFunction }: FormProps) => {
             location,
             observation
         });
-        sendFunction();
+        Alert.alert(
+            "Send bat signal",
+            `${name || "Hey"}, are you sure you want to proceed with the call?`,
+            [
+              { text: "No", onPress: () => {}, style: "cancel" },
+              { text: "Yes", onPress: () => sendFunction() }
+            ],
+            { cancelable: false }
+          );
     };
 
     const scrollViewRef = useRef<ScrollView>(null);
