@@ -1,4 +1,13 @@
-import { TextInput, TouchableWithoutFeedback, View, Keyboard, KeyboardAvoidingView, Platform, ScrollView, Alert } from "react-native"
+import {
+    TextInput,
+    TouchableWithoutFeedback,
+    View,
+    Keyboard,
+    KeyboardAvoidingView,
+    Platform,
+    ScrollView,
+    Alert
+} from "react-native"
 import { BatLogo } from "../BatLogo"
 import { TextInputComponent } from "../TextInputComponent"
 import Button from "../Button"
