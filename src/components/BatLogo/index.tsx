@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, Image } from 'react-native';
+import { Image } from 'react-native';
 
 import batLogo from '../../../assets/batLogo.png';
 import batLogoSmall from '../../../assets/batLogoSmall.png';
